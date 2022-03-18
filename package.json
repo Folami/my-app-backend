@@ -13,16 +13,8 @@
     "logs:prod": "heroku logs --tail"
   },
   "proxy": "http://localhost:3001",
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/Folami/sample-server.git"
-  },
   "author": "BIDMUS Folami",
   "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/Folami/sample-server/issues"
-  },
-  "homepage": "https://github.com/Folami/sample-server#readme",
   "dependencies": {
     "cors": "^2.8.5",
     "express": "^4.17.3"
