@@ -1,8 +1,8 @@
 const mongoose = require('mongoose')
 
 if (process.argv.length < 3) {
-  console.log('Please provide the password as an argument: node mongo.js <password>')
-  process.exit(1)
+    console.log('Please provide the password as an argument: node mongo.js <password>')
+    process.exit(1)
 }
 
 const password = process.argv[2]
@@ -15,9 +15,9 @@ const url =
 mongoose.connect(url)
 
 const noteSchema = new mongoose.Schema({
-  content: String,
-  date: Date,
-  important: Boolean,
+    content: String,
+    date: Date,
+    important: Boolean,
 })
 
 const Note = mongoose.model('Note', noteSchema)
@@ -35,11 +35,11 @@ if (firstRun) {
         important: true,
     })
     const note3 = new Note({
-        content: "GET and POST are the most important methods of HTTP protocol",
-        date: "2022-01-10T19:20:14.298Z",
+        content: 'GET and POST are the most important methods of HTTP protocol',
+        date: '2022-01-10T19:20:14.298Z',
         important: true
     })
-    
+
     const initNotes = [note2, note3]
     initNotes.forEach(note => {
         note.save().then(result => {
@@ -63,7 +63,7 @@ if (newNote) {
 
 Note.find({}).then(result => {
     result.forEach(note => {
-      console.log(note)
+        console.log(note)
     })
     mongoose.connection.close()
 })
