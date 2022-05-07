@@ -65,5 +65,11 @@ Note.find({}).then(result => {
     result.forEach(note => {
         console.log(note)
     })
+})
+
+Note.find({ important: true }).then(result => {
+    result.forEach(note => {
+        console.log(note)
+    })
     mongoose.connection.close()
 })
