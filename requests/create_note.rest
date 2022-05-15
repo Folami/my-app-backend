@@ -1,7 +1,9 @@
 POST  http://localhost:3001/api/notes
 Content-Type: application/json
+Authorization: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InJvb3QiLCJpZCI6IjYyN2NkYTdmNmUyYWVkNDRmODhjZjhiNCIsImlhdCI6MTY1MjM1NzkyOX0.z_r-lc90v2a2N3mD52PF11TZAdDelC7RlLH0XWNQ2hk
 
 {
-    "content": "Next VS Code REST client test",
-    "important": true
+    "content": "Single Page Apps use token authentication to protect data.",
+    "important": true,
+    "userId": "627cda7f6e2aed44f88cf8b4"
 }

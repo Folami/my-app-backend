@@ -1,4 +1,3 @@
-/*
 const app = require('./app') // the actual Express application
 const http = require('http')
 const config = require('./utils/config')
@@ -9,8 +8,8 @@ const server = http.createServer(app)
 server.listen(config.PORT, () => {
     logger.info(`Server running on port ${config.PORT}`)
 })
-*/
 
+/*
 require('dotenv').config()
 const express = require('express')
 const cors = require('cors')
@@ -58,12 +57,13 @@ app.get('/', (request, response) => {
 app.get('/api/notes', (request, response) => {
     response.json(notes)
 })
-*/
 app.get('/api/notes', (request, response) => {
     Note.find({}).then(notes => {
         response.json(notes)
     })
 })
+*/
+
 /*
 app.get('/api/notes/:id', (request, response) => {
     const id = request.params.id
@@ -85,7 +85,6 @@ app.get('/api/notes/:id', (request, response) => {
         response.status(404).end()
     }
 })
-*/
 app.get('/api/notes/:id', (request, response, next) => {
     Note.findById(request.params.id)
         .then(note => {
@@ -97,13 +96,14 @@ app.get('/api/notes/:id', (request, response, next) => {
         })
         .catch(error => next(error))
 })
+*/
+
 /*
 app.delete('/api/notes/:id', (request, response) => {
     const id = Number(request.params.id)
     notes = notes.filter(note => note.id !== id)
     response.status(204).end()
 })
-*/
 app.delete('/api/notes/:id', (request, response, next) => {
     Note.findByIdAndRemove(request.params.id)
         .then(result => {
@@ -111,6 +111,8 @@ app.delete('/api/notes/:id', (request, response, next) => {
         })
         .catch(error => next(error))
 })
+*/
+
 /*
 app.post('/api/notes', (request, response) => {
     const note = request.body
@@ -144,7 +146,6 @@ app.post('/api/notes', (request, response) => {
     notes = notes.concat(note)
     response.json(note)
 })
-*/
 app.post('/api/notes', (request, response, next) => {
     const body = request.body
     /*
@@ -152,6 +153,7 @@ app.post('/api/notes', (request, response, next) => {
         return response.status(400).json({ error: 'content missing' })
     }
     */
+   /*
     const note = new Note({
         content: body.content,
         important: body.important || false,
@@ -163,7 +165,9 @@ app.post('/api/notes', (request, response, next) => {
     })
         .catch(error => next(error))
 })
+*/
 
+/*
 app.put('/api/notes/:id', (request, response, next) => {
     const { content, important } = request.body
     Note.findByIdAndUpdate(
@@ -199,3 +203,4 @@ const PORT = process.env.PORT || 3001
 app.listen(PORT, () => {
     console.log(`Server running on port ${PORT}`)
 })
+*/
