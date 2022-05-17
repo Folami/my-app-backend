@@ -6,7 +6,7 @@
   "scripts": {
     "start": "NODE_ENV=production node index.js",
     "dev": "NODE_ENV=development nodemon index.js",
-    "build:ui": "rm -rf build && cd ../my-app/ && npm run build && cp -r build ../my-app-backend",
+    "build:ui": "rm -rf build && cd ../notes-app/ && npm run build && cp -r build ../my-app-backend",
     "deploy": "git push heroku master",
     "deploy:full": "npm run build:ui && git add . && git commit -m uiLoginBuild && git push && npm run deploy",
     "logs:prod": "heroku logs --tail",
